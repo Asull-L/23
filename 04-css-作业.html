@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水果知识百科</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: '微软雅黑', sans-serif;
+            background-color: #f0f9ff;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 192, 203, 0.2);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 模块通用样式 */
+        .module {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            color: #e75480;
+            font-size: 3em;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* 表单样式 */
+        form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 25px;
+        }
+
+        input[type="submit"] {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        /* 图片画廊 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 新增模块样式 */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .info-box {
+            padding: 20px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 8px;
+            border-left: 4px solid #ff69b4;
+        }
+
+        .step-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border: 2px solid;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .step span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: currentColor;
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            line-height: 30px;
+        }
+
+        .recipe-card {
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            background: #fff0f5;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container:hover, .module:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery img:hover, .content-img:hover {
+            transform: scale(1.05);
+        }
+
+        input[type="submit"]:hover {
+            background: #ff1493;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .gallery, .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            form, .step-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍓水果知识百科🍌</h1>
+
+        <!-- 搜索模块 -->
+        <div class="module">
+            <h2>🔍 水果搜索</h2>
+            <form action="https://www.iconfont.cn/search/index?searchType=icon">
+                <input type="text" name="q" placeholder="输入水果名称...">
+                <input type="submit" value="搜索">
+            </form>
+        </div>
+
+        <!-- 水果指南 -->
+        <div class="module">
+            <h2>📝 时令指南</h2>
+            <div class="gallery">
+                <img src="images/March.jpg" alt="3月水果指南">
+                <img src="images/Apr.jpg" alt="4月水果指南">
+            </div>
+        </div>
+
+        <!-- 视频模块 -->
+        <div class="module">
+            <h2>🎥 水果小课堂</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=425375981&bvid=BV1B3411H7Fg&cid=568454970&p=1" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- 营养科普 -->
+        <div class="module">
+            <h2>🍎 营养解析</h2>
+            <div class="content-section">
+                <div class="info-box">
+                    <h3>每100g营养成分</h3>
+                    <ul>
+                        <li>🍓 草莓：维C 58.8mg | 纤维 2g</li>
+                        <li>🍌 香蕉：钾 358mg | 碳水 22g</li>
+                        <li>🥝 猕猴桃：维E 1.46mg | 叶酸 25μg</li>
+                        <li>🍊 橙子：维C 53.2mg | 钙 40mg</li>
+                    </ul>
+                </div>
+                <img src="images/nutrition-chart.jpg" alt="营养图表" class="content-img">
+            </div>
+        </div>
+
+        <!-- 挑选技巧 -->
+        <div class="module">
+            <h2>🔍 选购秘籍</h2>
+            <div class="content-section">
+                <div class="step-box">
+                    <div class="step" style="border-color: #ffd700;">
+                        <span>1</span>
+                        <p>看外观：表皮光滑无凹陷</p>
+                    </div>
+                    <div class="step" style="border-color: #ffa500;">
+                        <span>2</span>
+                        <p>闻香气：自然果香浓郁</p>
+                    </div>
+                    <div class="step" style="border-color: #ff6347;">
+                        <span>3</span>
+                        <p>掂重量：手感沉实为佳</p>
+                    </div>
+                </div>
+                <img src="images/selection-guide.jpg" alt="挑选示范" class="content-img">
+            </div>
+        </div>
+
+        <!-- 美食菜谱 -->
+        <div class="module">
+            <h2>🍳 果味厨房</h2>
+            <div class="content-section">
+                <div class="recipe-card">
+                    <h3>🍓草莓大福</h3>
+                    <div class="ingredients">
+                        <h4>材料：</h4>
+                        <ul>
+                            <li>草莓 6颗</li>
+                            <li>糯米粉 150g</li>
+                            <li>红豆沙 120g</li>
+                        </ul>
+                    </div>
+                    <div class="steps">
+                        <h4>步骤：</h4>
+                        <ol>
+                            <li>草莓包入豆沙馅</li>
+                            <li>糯米皮包裹成型</li>
+                            <li>蒸10分钟即可</li>
+                        </ol>
+                    </div>
+                </div>
+                <img src="images/recipe-demo.jpg" alt="成品展示" class="content-img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
