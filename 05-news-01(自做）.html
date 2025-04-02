@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习一</title>
+</head>
+<body>
+    <script>
+        let a = 100
+        console.log(a)
+        const api_key = 'P231014737'
+        console.log(api_key)
+        console.log(typeof a, typeof api_key, typeof true)
+        
+        const LAN = 20050226
+        console.log(LAN)
+        
+        let b = '1'
+        console.log(a + b)          // 字符串拼接
+        console.log(a + Number(b))  // 数值相加
+        
+        let c = '100'
+        console.log(a == c)   // 宽松相等
+        console.log(a === c)  // 严格相等
+
+        // 分支语句
+        let current_time = '0225'
+        if (current_time == '0226') {
+            console.log('20岁的自己')
+        } else {
+            console.log('19岁的自己')
+        }
+
+        // for循环
+        for (let i = 8; i <= 28; i++) {
+            console.log(i)
+        }
+
+        // while循环
+        let years = 100
+        while (years > 0) {
+            console.log('永远18岁')
+            years -= 10  // 更简洁的写法
+        }
+
+        // 函数
+        function intro() {
+            console.log('你好，我是LAN')
+        }
+        intro()
+
+        function intro2(content) {
+            console.log('西北民族大学新闻学1班' + String(content))  // 修正String函数
+        }
+        intro2('P231014737')
+
+        function intro3(content1, content2) {
+            console.log('来自广西柳州' +  String(content1) +  String(content2))  // 修正String函数
+        }
+        intro3('螺蛳粉的家乡', '参数2')  // 移除多余参数
+
+        function intro4(content) {
+            console.log(content)
+            return content + '这是返回值'
+        }
+        intro4('带返回值的函数')
+        
+        let result = intro4('带返回值的函数')
+        console.log(result)
+    </script>
+</body>
+</html>
