@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 异步编程练习2</title>
+</head>
+
+<body>
+    <h1>JavaScript 异步编程练习</h1>
+    <div id="demo">
+
+    </div>
+    <script>
+        setTimeout ( () => {
+            console.log('111')
+        },2000)
+        console.log('222')
+
+        function getSomething(){
+            return new Promise((resolve) =>{
+                setTimeout(() =>{
+                    console.log('111111')
+                    resolve();
+                },2000)
+            })
+        }
+        getSomething().then(() =>{
+            console.log('222222')
+        })
+
+        async function getSomething2() {
+            await  new Promise((resolve));
+            console.log('2222222')
+
+        }
+        // ... existing code ...
+
+        async function getSomething2() {
+            await  new Promise((resolve));
+            console.log('2222222')
+        }
+
+        // 新增函数：获取GitHub仓库指定日期的提交
+        async function getGitHubCommitsByDate(owner, repo, date) {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?since=${date}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const commits = await response.json();
+                const commitDates = commits.map(commit => commit.commit.committer.date);
+                return { dates: commitDates };
+            } catch (error) {
+                console.error('获取GitHub提交失败:', error);
+                return { error: error.message };
+            }
+        }
+
+        // 使用示例
+        // getGitHubCommitsByDate('Asull-L', '23', '2023-01-01')
+        //     .then(result => console.log(result));
+    </script>
+    </script>
