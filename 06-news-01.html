@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习二</title>
+    <script>
+        class Student {
+            constructor(name, age, school) {
+                this.name = name;
+                this.age = age;
+                this.school = school;
+            }
+
+            learn(subject = "新闻学") {
+                console.log(`${this.name}不想学习${subject}，摆烂！`);
+            }
+
+            exam() {
+                console.log(`${this.name}喜欢考试`);
+            }
+        }
+
+        // 创建学生对象
+        let xiaolan = new Student("小蓝", 20, "西北民族大学");
+        xiaolan.learn("新闻写作与采访");
+        xiaolan.exam();
+
+        // 修正后的运动员类（继承自Student）
+        class Sportsman extends Student {
+            constructor(name, age, school, sex, special, worldRanking, awards) {
+                super(name, age, school);
+                this.sex = sex;
+                this.special = special;
+                this.worldRanking = worldRanking;
+                this.awards = awards;
+            }
+
+            intern(corp) {
+                console.log(`${this.name}在${corp}比赛，获得积分2000`);
+                super.exam(); // 调用父类方法
+            }
+        }
+
+        // 创建运动员实例（需补充完整参数）
+        let lingaoyuan = new Sportsman(
+            "林高远",
+            28,
+            "国家队", 
+            "男",
+            "乒乓球",
+            5,
+            ["世乒赛冠军", "亚运会金牌"]
+        );
+        
+        lingaoyuan.intern("WTT冠军赛");
+
+        // 回调函数，函数作为参数传递给另一个函数
+        console.log("易烊千玺");
+
+        setTimeout(function(){console.log("王源")}, 1000);
+
+        console.log("王俊凯");
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="demo" onclick="alert('你点我干啥！')"> 这是一个标题的原始内容</h1>
+    <div>
+        <p id="anotherp">这是一个段落</p>
+    </div>
+
+
+    <script>
+        let myh1 = document.getElementById("demo");
+        console.log(myh1);
+        // 1.改变元素的内容
+        myh1.innerHTML = "欢迎光临"
+        // 2.改变元素的样式
+        myh1.style.color = "#898";
+
+        let myp = document.getElementById("anotherp");
+        myp.onclick = function () {
+            alert("你好,我是LAN!");
+        }
+
+        window.onload = function () {
+            alert("页面加载完成");
+        }
+        // 3.增加事件
+    </script>
+
+
+</body>
+</html>
+        
+
+
