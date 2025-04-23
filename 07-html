@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 异步编程练习2</title>
+</head>
+
+<body>
+    <h1>JavaScript 异步编程练习</h1>
+    <div id="demo">
+
+    </div>
+    <script>
+        setTimeout ( () => {
+            console.log('111')
+        },2000)
+        console.log('222')
+
+        function getSomething(){
+            return new Promise((resolve) =>{
+                setTimeout(() =>{
+                    console.log('111111')
+                    resolve();
+                },2000)
+            })
+        }
+        getSomething().then(() =>{
+            console.log('222222')
+        })
+
+        async function getSomething2() {
+            await  new Promise((resolve));
+            console.log('2222222')
+
+        }
+    </script>
