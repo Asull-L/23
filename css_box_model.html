@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒模型 - Web前端技术课程作业</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="bg-slate-800 fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="knowledge_page.html" class="text-purple-200 text-xl font-bold">Web前端技术课程作业</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="knowledge_page.html#concept" class="text-gray-300 hover:text-purple-200 transition-colors">核心概念</a>
+                    <a href="knowledge_page.html#content" class="text-gray-300 hover:text-purple-200 transition-colors">内容精选</a>
+                    <a href="knowledge_page.html#reading" class="text-gray-300 hover:text-purple-200 transition-colors">延伸阅读</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">CSS盒模型详解</h2>
+            <div class="bg-white rounded-lg p-6 card-hover">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">什么是CSS盒模型？</h3>
+                <p class="text-gray-600">CSS盒模型是网页布局的基础，每个HTML元素都被视为一个矩形盒子，由内容区（content）、内边距（padding）、边框（border）和外边距（margin）四部分组成。</p>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">盒模型组成部分</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>内容区（Content）：显示元素的实际内容（文本、图片等），尺寸由width和height属性控制。</li>
+                    <li>内边距（Padding）：内容区与边框之间的空白区域，通过padding属性设置。</li>
+                    <li>边框（Border）：围绕内边距的线条，通过border属性设置宽度、样式和颜色。</li>
+                    <li>外边距（Margin）：边框与其他元素之间的空白区域，通过margin属性设置。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">盒模型示例代码</h3>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>.box {
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    border: 2px solid #3b82f6;
+    margin: 10px;
+    /* 标准盒模型（默认）：总宽度=width+padding*2+border*2 */
+    box-sizing: content-box;
+    /* 替代盒模型：总宽度=width（包含padding和border） */
+    /* box-sizing: border-box; */
+}</code></pre>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 card-hover mt-6">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">实际应用案例：03/04文档中的盒模型实践</h3>
+                <h4 class="text-lg font-medium text-gray-800 mb-2">03-css-01.html：样式表的盒模型应用 <span class="text-sm text-gray-500">（文档名称：03-css-01.html，创建时间：2025-3-19）</span></h4>
+                <p class="text-gray-600 mb-3">该文档展示了三种样式表使用方式（外部/内部/内嵌），其中内嵌样式（如li元素的color属性）直接作用于元素盒模型的内容区样式；内部样式（h2的font-size等属性）定义了内容区的文字尺寸和装饰。</p>
+                <h4 class="text-lg font-medium text-gray-800 mb-2">04-css-作业.html：container类的盒模型参数 <span class="text-sm text-gray-500">（文档名称：04-css-作业.html，创建时间：2025-3-27）</span></h4>
+                <p class="text-gray-600 mb-3">.container类的CSS属性直接对应盒模型各部分：</p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>max-width: 1200px - 控制内容区的最大宽度</li>
+                    <li>margin: 0 auto - 外边距实现水平居中</li>
+                    <li>padding: 30px - 内边距定义内容区与边框的空白</li>
+                </ul>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>.container {
+    max-width: 1200px; /* 内容区最大宽度 */
+    margin: 0 auto; /* 外边距 */
+    padding: 30px; /* 内边距 */
+}</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

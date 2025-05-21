@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局 - 知识百科</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="bg-slate-800 fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="knowledge_page.html" class="text-purple-200 text-xl font-bold">知识百科</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="knowledge_page.html#concept" class="text-gray-300 hover:text-purple-200 transition-colors">核心概念</a>
+                    <a href="knowledge_page.html#content" class="text-gray-300 hover:text-purple-200 transition-colors">内容精选</a>
+                    <a href="knowledge_page.html#reading" class="text-gray-300 hover:text-purple-200 transition-colors">延伸阅读</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">响应式布局详解</h2>
+            <div class="bg-white rounded-lg p-6 card-hover">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">什么是响应式布局？</h3>
+                <p class="text-gray-600">响应式布局通过媒体查询（@media）、弹性布局（flex/grid）和百分比单位等技术，使页面内容能自动适配不同屏幕尺寸（手机、平板、桌面），提供一致的用户体验。</p>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">为什么需要响应式布局？</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>多设备适配：覆盖手机、平板、桌面等不同终端，无需开发多个独立页面。</li>
+                    <li>提升体验：内容自动调整布局，避免用户手动缩放查看。</li>
+                    <li>优化SEO：单一URL对应所有设备，搜索引擎更易抓取。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">常用实现技术</h3>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>&lt;!-- 视口元标签 --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;!-- 媒体查询示例 --&gt;
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+}
+
+&lt;!-- 弹性布局示例 --&gt;
+&lt;div class="flex flex-col md:flex-row gap-4"&gt;
+    &lt;div&gt;左侧内容&lt;/div&gt;
+    &lt;div&gt;右侧内容&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex布局 - Web前端技术课程作业</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="bg-slate-800 fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="knowledge_page.html" class="text-purple-200 text-xl font-bold">Web前端技术课程作业</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="knowledge_page.html#concept" class="text-gray-300 hover:text-purple-200 transition-colors">核心概念</a>
+                    <a href="knowledge_page.html#content" class="text-gray-300 hover:text-purple-200 transition-colors">内容精选</a>
+                    <a href="knowledge_page.html#reading" class="text-gray-300 hover:text-purple-200 transition-colors">延伸阅读</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">Flex布局详解</h2>
+            <div class="bg-white rounded-lg p-6 card-hover">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">什么是Flex布局？</h3>
+                <p class="text-gray-600">Flex布局（弹性盒布局）是CSS3引入的一种布局模型，通过设置容器的display: flex属性，使子元素（项目）能够灵活地调整尺寸和位置，轻松实现水平/垂直对齐、空间分配等复杂布局需求。</p>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">核心属性解析</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>flex-direction：决定主轴方向（row/column），控制项目排列方向。</li>
+                    <li>justify-content：主轴对齐方式（flex-start/center/flex-end/space-between等）。</li>
+                    <li>align-items：交叉轴对齐方式（stretch/center/flex-start等）。</li>
+                    <li>flex-wrap：控制项目换行（nowrap/wrap）。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">经典布局示例</h3>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>&lt;!-- 水平居中布局 --&gt;
+&lt;div class="flex justify-center items-center h-48 bg-sky-100"&gt;
+    &lt;div class="p-4 bg-sky-500 text-white"&gt;居中内容&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 左右固定中间自适应 --&gt;
+&lt;div class="flex gap-4"&gt;
+    &lt;div class="w-24 bg-sky-500 text-white p-4"&gt;左侧固定&lt;/div&gt;
+    &lt;div class="flex-1 bg-sky-500 text-white p-4"&gt;中间自适应&lt;/div&gt;
+    &lt;div class="w-24 bg-sky-500 text-white p-4"&gt;右侧固定&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 card-hover mt-6">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">JavaScript 核心语法示例（05-news-01.html）</h3>
+                <p class="text-gray-500 text-sm mb-3">文档名称：JavaScipt 核心语法学习一 | 创建时间：2025-4-2</p>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>let a = 100
+console.log(a)
+const api_key='P231014737'
+// 条件语句示例
+if(current_time =='0226') {
+    console.log('20岁的自己')
+} else {
+    console.log('19岁的自己')
+}
+// 循环示例
+for(let i = 8; i <= 28; i++){
+    console.log(i)
+}</code></pre>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 card-hover mt-6">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">JavaScript 核心语法示例（06-news-01.html）</h3>
+                <p class="text-gray-500 text-sm mb-3">文档名称：JavaScript 核心语法学习二 | 创建时间：2025-4-8</p>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>// 类与继承示例
+class Sportsman extends Student {
+    intern(corp) {
+        console.log(`${this.name}在${corp}比赛`);
+    }
+}
+// DOM操作示例
+let myh1 = document.getElementById("demo");
+myh1.innerHTML = "欢迎光临";
+myh1.style.color = "#898";</code></pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

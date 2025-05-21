@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS动画 - Web前端技术课程作业</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <nav class="bg-slate-800 fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="knowledge_page.html" class="text-purple-200 text-xl font-bold">Web前端技术课程作业</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="knowledge_page.html#concept" class="text-gray-300 hover:text-purple-200 transition-colors">核心概念</a>
+                    <a href="knowledge_page.html#content" class="text-gray-300 hover:text-purple-200 transition-colors">内容精选</a>
+                    <a href="knowledge_page.html#reading" class="text-gray-300 hover:text-purple-200 transition-colors">延伸阅读</a>
+                </div>
+
+
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">CSS动画详解</h2>
+            <div class="bg-white rounded-lg p-6 card-hover">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">什么是CSS动画？</h3>
+                <p class="text-gray-600">CSS动画通过transition（过渡）和animation（关键帧动画）属性，为元素添加平滑的动态效果，无需JavaScript即可实现按钮悬停、菜单展开、加载提示等交互效果。</p>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">核心技术对比</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>transition：用于元素状态变化时的平滑过渡（如hover时颜色变化），需要触发条件（如:hover）。</li>
+                    <li>animation：通过@keyframes定义关键帧，可自动循环播放，支持更复杂的动画序列（如旋转、淡入淡出）。</li>
+                </ul>
+                <h3 class="text-xl font-semibold text-sky-600 mt-6 mb-3">典型应用示例</h3>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>&lt;!-- 过渡动画示例 --&gt;
+.button {
+    background: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.button:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+&lt;!-- 关键帧动画示例 --&gt;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animated-box {
+    animation: fadeIn 0.5s ease-out forwards;
+}</code></pre>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 card-hover mt-6">
+                <h3 class="text-xl font-semibold text-sky-600 mb-3">实际应用案例：07/08文档中的动画实践</h3>
+                <h4 class="text-lg font-medium text-gray-800 mb-2">07-async-01.html：JavaScript动画控制 <span class="text-sm text-gray-500">（文档名称：07-async-01.html，创建时间：2025-4-15）</span></h4>
+                <p class="text-gray-600 mb-3">该文档展示了通过setTimeout、Promise和async/await控制CSS动画的执行时机，例如通过async函数延迟1秒后设置元素透明度。</p>
+                <pre class="bg-slate-100 p-4 rounded-lg text-gray-700 mt-3"><code>// setTimeout 示例
+setTimeout(() => {
+    console.log('延迟2秒执行');
+}, 2000);
+
+// Promise 示例
+function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('数据加载完成');
+        }, 1500);
+    });
+}
+fetchData().then(data => console.log(data));
+
+// async/await 示例
+async function animateWithDelay() {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    document.querySelector('.animated-box').style.opacity = '1';
+}
+animateWithDelay();</code></pre>
+            </div>
+
+
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web前端技术课程作业</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 自定义微交互样式 */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- 导航栏组件 -->
+    <nav class="bg-slate-800 fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-purple-200 text-xl font-bold">Web前端技术课程作业</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#concept" class="text-gray-300 hover:text-purple-200 transition-colors">核心概念</a>
+                    <a href="#content" class="text-gray-300 hover:text-purple-200 transition-colors">知识内容精选</a>
+                    <a href="#reading" class="text-gray-300 hover:text-purple-200 transition-colors">延伸阅读</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="pt-20">
+        <!-- 关键概念模块 -->
+        <section id="concept" class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">核心概念解析</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="html_semantics.html" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors text-center card-hover">
+                    <h3 class="text-xl font-semibold mb-3">HTML语义化</h3>
+                    <p>使用nav、article等标签明确内容结构，提升可访问性和SEO效果</p>
+                </a>
+                <a href="responsive_design.html" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors text-center card-hover">
+                    <h3 class="text-xl font-semibold mb-3">响应式布局</h3>
+                    <p>通过媒体查询（@media）和弹性布局（grid/flex），确保内容在不同设备上完美展示</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 内容卡片模块 -->
+        <section id="content" class="bg-sky-100 py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-slate-800 mb-8">知识内容精选</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="css_box_model.html" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors text-center card-hover">
+                        <h3 class="text-lg font-semibold mb-2">CSS盒模型</h3>
+                        <p>包含内容区、内边距、边框和外边距，控制元素的尺寸和布局</p>
+                    </a>
+                    <a href="flex_layout.html" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors text-center card-hover">
+                        <h3 class="text-lg font-semibold mb-2">Flex布局</h3>
+                        <p>灵活的弹性盒布局，轻松实现水平/垂直对齐和空间分配</p>
+                    </a>
+                    <a href="css_animation.html" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg transition-colors text-center card-hover">
+                        <h3 class="text-lg font-semibold mb-2">CSS动画</h3>
+                        <p>通过transition和animation属性创建平滑的交互效果，提升用户体验</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 延伸阅读模块 -->
+        <section id="reading" class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8">延伸阅读推荐</h2>
+            <ol class="list-decimal list-inside space-y-4">
+                <li>
+                    <a href="https://book.douban.com/subject/26745943/" class="text-sky-600 hover:underline">《HTML5权威指南》</a>
+                    <p class="text-gray-600 mt-1">全面讲解HTML5新特性与语义化实践，适合前端开发者系统学习。</p>
+                </li>
+                <li>
+                    <a href="https://book.douban.com/subject/35667183/" class="text-sky-600 hover:underline">《Tailwind CSS实战》</a>
+                    <p class="text-gray-600 mt-1">结合实际案例演示工具类CSS的高效开发流程，提升样式编写效率。</p>
+                </li>
+                <li>
+                    <a href="https://book.douban.com/subject/26358144/" class="text-sky-600 hover:underline">《响应式Web设计：HTML5和CSS3实战》</a>
+                    <p class="text-gray-600 mt-1">深入解析媒体查询、弹性布局等技术，指导全设备适配方案。</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
