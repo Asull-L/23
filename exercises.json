@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "title": "HTML 基础结构练习",
+      "description": "学习并实践HTML5的基本文档结构，包括头部、主体和常用标签。",
+      "imageUrl": "https://images.unsplash.com/photo-1600695268275-1a6468700bd5",
+      "link": "/fruit-knowledge.html",
+      "tags": ["HTML", "基础"]
+    },
+    {
+      "id": 2,
+      "title": "CSS 盒模型与布局",
+      "description": "深入理解CSS盒模型，并使用Flexbox和Grid进行响应式页面布局。",
+      "imageUrl": "https://tse3-mm.cn.bing.net/th/id/OIP-C.PhEoTEvzjLao0U-I_I6kGgHaEK?rs=1&pid=ImgDetMain",
+      "link": "/03-css-01work.html",
+      "tags": ["CSS", "Flexbox", "Grid", "响应式"]
+    },
+    {
+      "id": 3,
+      "title": "JavaScript DOM 操作",
+      "description": "通过JavaScript动态操作DOM元素，实现交互式网页功能。",
+      "imageUrl": "https://s3.cn-north-1.jdcloud-oss.com/shendengbucket1/2023-02-28-21-12LegGeYAZEB7Q6ey.png",
+      "link": "/06-news-01.html",
+      "tags": ["JavaScript", "DOM", "交互"]
+    },
+    {
+      "id": 4,
+      "title": "React 组件化开发",
+      "description": "学习使用React构建可复用的UI组件，理解状态和属性。",
+      "imageUrl": "https://tse1-mm.cn.bing.net/th/id/OIP-C.ABPgQJMP2YA8Vd38SZit2QHaEI?rs=1&pid=ImgDetMain",
+      "tags": ["React", "组件", "SPA"]
+    },
+    {
+      "id": 5,
+      "title": "Next.js 全栈开发实践",
+      "description": "学习 Next.js 13+ App Router 架构、服务端组件（Server Components）、数据获取（Data Fetching）及全栈应用开发流程",
+      "imageUrl": "https://blog.openreplay.com/images/how-to-build-a-progress-bar-for-nextjs/images/hero.png",
+      "link": "/nextjs-practice",
+      "tags": ["Next.js", "全栈开发", "React框架"]
+    },
+    {
+      "id": 6,
+      "title": "GitHub提交记录查询",
+      "description": "练习使用JavaScript异步获取GitHub仓库提交记录并展示",
+      "imageUrl": "https://tse4-mm.cn.bing.net/th/id/OIP-C.ae2prUSZPLC2Ii0sl74TIAHaEK?r=0&rs=1&pid=ImgDetMain",
+      "link": "/07-async-01（自做）.html",
+      "tags": ["GitHub API", "异步编程", "JavaScript"]
+    },
+    {
+      "id": 7,
+      "title": "QAthing问答服务",
+      "description": "一个智能问答服务，可以回答各种技术问题",
+      "imageUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.avDemvmzs19K-4YiOUMtuwHaGB?r=0&rs=1&pid=ImgDetMain",
+      "link": "https://ai.youdao.com/saas/qanything/#/bots/D2F23FB291DC41E4/share",
+      "tags": ["AI", "问答系统", "智能助手"],
+      "buttonText": "立即提问"
+}
+]
